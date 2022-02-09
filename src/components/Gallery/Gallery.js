@@ -7,20 +7,15 @@ import img2 from "../../assets/salon/carou2.png";
 import img3 from "../../assets/salon/carou3.png";
 import img4 from "../../assets/salon/carou4.png";
 import img5 from "../../assets/salon/cheveuxlisse2.jpg";
-import img6 from "../../assets/salon/bride.jpg";
-import img7 from "../../assets/salon/ciseaux.jpg";
-import img8 from "../../assets/salon/coupe.jpg";
-import img9 from "../../assets/salon/salon1.jpeg";
-import img10 from "../../assets/salon/hair.jpg";
-import img12 from "../../assets/salon/carou4.png";
-import img13 from "../../assets/salon/carou4.png";
-import img14 from "../../assets/salon/carou4.png";
-import img15 from "../../assets/salon/test.png";
+import img6 from "../../assets/salon/salon1.jpeg";
+import img7 from "../../assets/salon/nadia_haircut_mask.png";
+import img8 from "../../assets/salon/salon_01.jpg";
+import img9 from "../../assets/salon/salon_02.jpg";
+import img10 from "../../assets/salon/salon_03.jpg";
 
 const Gallery = () => {
   const imgs = [
-    img1, img2, img3, img4, img5, img6, img7,
-    img8, img9, img10, img12, img13, img14, img15
+    img1, img2, img3, img4, img5, img6, img7, img8, img9, img10
   ];
 
   return (
