@@ -1,0 +1,114 @@
+.prestation_row {
+  color: var(--color_text);
+  width: 60%;
+  margin: 15px;
+}
+
+.prestation_row h3 {
+  font-size: 1.5em;
+}
+
+.prestation_row .row {
+  font-size: 1.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  border: 1px var(--background_color) solid;
+  border-bottom: var(--color_green) 1px solid;
+  margin: 15px;
+  padding: 12px;
+  transition: ease-in 0.2s;
+  transition: all 0.3s ease-out;
+}
+
+.prestation_row .row:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  background-color: var(--color_melon_light);
+  border: var(--color_green) 1px solid;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  transition: all 0.2s ease-in;
+}
+
+.prestation_row .row_content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.prestation_row .row img {
+  width: 30px;
+  height: auto;
+  margin: 0 30px;
+}
+
+.prestation_row .row .desc_prix {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.prestation_row .row .a_partir {
+  font-size: 0.5em;
+  font-style: italic;
+}
+
+.prestation_row .row .row_prix {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: fit-content;
+  margin-left: 8px;
+  cursor: default;
+}
+
+.prestation_row .row .row_desc {
+  cursor: default;
+}
+
+/* ---------------------- media queries ---------------------- */
+
+@media only screen and (max-width: 1240px) {
+  .prestation_row {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 830px) {
+  .prestation_row h3 {
+    font-size: 1em;
+  }
+
+  .prestation_row .row {
+    font-size: 0.8em;
+  }
+
+  .prestation_row .row img {
+    width: 15px;
+    height: auto;
+    margin: 0 10px;
+  }
+}
+
+@media only screen and (max-width: 455px) {
+  .prestation_row .row {
+    flex-wrap: wrap;
+    margin: 15px 8px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .prestation_row .row_content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .prestation_row .row_content .row_prix {
+    margin: 7px;
+  }
+}
