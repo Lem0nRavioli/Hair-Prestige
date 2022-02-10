@@ -1,125 +1,43 @@
-// npm i react-image-viewer-dv
-
-import { ImagerDisplay, ImagerImg } from '../utils/imager/index';
+import React, { useState } from "react";
+import { SliderData } from "./SliderData";
 import "./Gallery.css";
-import img1 from "../../assets/salon/carou1.png";
-import img2 from "../../assets/salon/carou2.png";
-import img3 from "../../assets/salon/carou3.png";
-import img4 from "../../assets/salon/carou4.png";
-import img5 from "../../assets/salon/cheveuxlisse2.jpg";
-import img6 from "../../assets/salon/salon1.jpeg";
-import img7 from "../../assets/salon/nadia_haircut_mask.png";
-import img8 from "../../assets/salon/salon_01.jpg";
-import img9 from "../../assets/salon/salon_02.jpg";
-import img10 from "../../assets/salon/salon_03.jpg";
+import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
 
-const Gallery = () => {
-  const imgs = [
-    img1, img2, img3, img4, img5, img6, img7, img8, img9, img10
-  ];
+const Gallery = ({ slides }) => {
+  const [current, setCurrent] = useState(0);
+  const length = slides.length;
+
+  const nextSlide = () => {
+    setCurrent(current === length - 1 ? 0 : current + 1);
+  };
+
+  const prevSlide = () => {
+    setCurrent(current === 0 ? length - 1 : current - 1);
+  };
+
+  if (!Array.isArray(slides) || slides.length <= 0) {
+    return null;
+  }
 
   return (
     <div className="gallery">
-      <ImagerDisplay z-index="2000" />
-      {
-        imgs.map((img, index) => (
-          <ImagerImg width="400px" src={img} alt={`Image${index}`} key={`Gallery${index}`}/>
-        ))
-      }
+      <FaArrowAltCircleLeft className="left-arrow" onClick={prevSlide} />
+      <FaArrowAltCircleRight className="right-arrow" onClick={nextSlide} />
+
+      {SliderData.map((slide, index) => {
+        return (
+          <div
+            className={index === current ? "slide active" : "slide"}
+            key={index}
+          >
+            {index === current && (
+              <img src={slide.image} alt="travel" className="image" />
+            )}
+          </div>
+        );
+      })}
     </div>
   );
 };
 
 export default Gallery;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React, {useState} from "react";
-// import "./Gallery.css";
-// import Img1 from "../../assets/salon/carou1.png";
-// import Img2 from "../../assets/salon/carou2.png";
-// import Img3 from "../../assets/salon/carou3.png";
-// import Img4 from "../../assets/salon/carou4.png";
-
-
-
-// const Gallery = () => {
-
-//     let img =[
-//         {
-//             id: 1,
-//             imgSrc: Img1,
-//         },
-//         {
-//             id: 2,
-//             imgSrc: Img2,
-//         },
-//         {
-//             id: 3,
-//             imgSrc: Img3,
-//         },
-//         {
-//             id: 4,
-//             imgSrc: Img4,
-//         },
-//     ]
-
-//     const [model, setModel] = useState(false);
-//     const [tempingSrc, setTempImgSrc] = useState("");
-
-//     const getImg = (imgSrc) =>{
-//         setTempImgSrc(imgSrc);
-//         setModel(true);
-//     }
-
-//     return (
-//       <>
-//         <div className={model? "model open" : "model"}>
-//             <img src={tempingSrc} />
-//         </div>
-
-//         <div className="gallery">
-//           {img.map((item, index) => {
-//             return (
-//               <div className="pics" key={index} onClick={() => getImg(item.imgSrc)}>
-//                 <img src={item.imgSrc} style={{ width: "50%" }} />
-//               </div>
-//             );
-//           })}
-//         </div>
-//       </>
-//     );
-// }
-
-// export default Gallery;
